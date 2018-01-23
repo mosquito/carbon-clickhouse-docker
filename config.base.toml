@@ -1,0 +1,49 @@
+[common]
+metric-prefix = "carbon.agents.{host}"
+metric-endpoint = "local"
+max-cpu = 1
+metric-interval = "1m0s"
+
+[clickhouse]
+url = "http://localhost:8123/"
+data-table = "graphite"
+data-tables = []
+reverse-data-tables = []
+tree-table = "graphite_tree"
+reverse-tree-table = ""
+tree-date = "2016-11-01"
+threads = 1
+data-timeout = "1m0s"
+tree-timeout = "1m0s"
+
+[data]
+path = "/data/carbon-clickhouse/"
+chunk-interval = "1s"
+
+[udp]
+listen = ":2003"
+enabled = true
+log-incomplete = false
+
+[tcp]
+listen = ":2003"
+enabled = true
+
+[pickle]
+listen = ":2004"
+enabled = true
+
+[grpc]
+listen = ":2005"
+enabled = false
+
+[pprof]
+listen = "localhost:7007"
+enabled = false
+
+[[logging]]
+logger = "stdout"
+level = "info"
+encoding = "mixed"
+encoding-time = "iso8601"
+encoding-duration = "seconds"
