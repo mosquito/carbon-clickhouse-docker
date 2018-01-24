@@ -41,9 +41,9 @@ enabled = false
 listen = "localhost:7007"
 enabled = false
 
-[[logging]]
-logger = "stdout"
-level = "info"
+[logging]
+file = "stdout"
+level = "debug"
 encoding = "mixed"
 encoding-time = "iso8601"
 encoding-duration = "seconds"
